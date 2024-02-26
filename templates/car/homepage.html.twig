@@ -7,6 +7,6 @@
         <h1>Welkom op de homepagina!</h1>
     {% endif %}
     {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_OFFERER') %}
-        <button class="btn btn-primary" href="#">Nieuw Aanbod</button>
+        <a class="btn btn-primary" href="{{ path('offer_create_step1') }}">Nieuw Aanbod</a>
     {% endif %}
 {% endblock %}

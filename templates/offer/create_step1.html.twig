@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Nieuw Aanbod (1/2)</h1>
+
+    <form method="post" action="{{ path('offer_create_step2') }}">
+        <label for="licensePlate">Kenteken</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">NL</span>
+            </div>
+            <input type="text" class="form-control" id="licensePlate" name="licensePlate" required style="max-width: 300px">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Volgende</button>
+    </form>
+{% endblock %}
