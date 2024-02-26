@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if (username is not null) %}
+        <h1>Welkom op de homepagina, {{ username }}!</h1>
+    {% else %}
+        <h1>Welkom op de homepagina!</h1>
+    {% endif %}
+    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_OFFERER') %}
+        <button class="btn btn-primary" href="#">Nieuw Aanbod</button>
+    {% endif %}
+{% endblock %}
