@@ -21,11 +21,17 @@ class OfferController extends AbstractController
     public function submitStepOne(Request $request): Response
     {
         $data = $request->getSession()->get('offer_data', []);
+        $licensePlate = '';
         if ($request->isMethod('POST')) {
             $data['licensePlate'] = $request->request->get('licensePlate');
+            $licensePlate = $request->request->get('licensePlate');
             $request->getSession()->set('offer_data', $data);
         }
-        dd($data);
+
+        return $this->render('offer/create_step2.html.twig', [
+            'data' => $data,
+            'licensePlate' => $licensePlate
+        ]);
     }
 
 }
